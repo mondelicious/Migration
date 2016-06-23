@@ -82,7 +82,7 @@ namespace Migration
                     command.CommandText = "USE db_pldt CREATE TABLE tbl_account(Employee_ID INT NOT NULL, First_name VARCHAR(250), Last_name VARCHAR(250), Email VARCHAR(250), Username VARCHAR(250), Password VARCHAR(250), UserType VARCHAR(250), Contact_number VARCHAR(250), Position VARCHAR(250) PRIMARY KEY(Employee_ID))";
                     command.ExecuteNonQuery();
 
-                    Console.WriteLine("Successfully created Table");
+                    Console.WriteLine("Successfully created the Table");
                     Console.ReadLine();
                     connection.Close();
                 }
