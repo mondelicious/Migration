@@ -21,7 +21,7 @@ namespace Migration
         {
             try
             {
-                MySqlConnection conn = new MySqlConnection("datasource=localhost; username=root; password=");
+                MySqlConnection conn = new MySqlConnection("datasource=localhost; username=root; password=vans");
 
                 string strCheck = "SHOW DATABASES LIKE 'db_pldt'";
 
@@ -52,7 +52,7 @@ namespace Migration
 
         public static void createTBL()
         {
-            MySqlConnection conn = new MySqlConnection("datasource=localhost; Database=db_pldt; username=root; password=");
+            MySqlConnection conn = new MySqlConnection("datasource=localhost; Database=db_pldt; username=root; password=vans");
 
             string strCheck = "SHOW TABLES LIKE 'tbl_account'";
 
@@ -74,7 +74,7 @@ namespace Migration
 
                 try
                 {
-                    MySqlConnection connection = new MySqlConnection("datasource=localhost; port=3306; username=root; password=");
+                    MySqlConnection connection = new MySqlConnection("datasource=localhost; port=3306; username=root; password=vans");
 
                     connection.Open();
                     MySqlCommand command = new MySqlCommand();
@@ -100,7 +100,7 @@ namespace Migration
         {
             try
             {
-                MySqlConnection connection = new MySqlConnection("datasource=localhost; port=3306;Uid=root;Pwd=;");
+                MySqlConnection connection = new MySqlConnection("datasource=localhost; port=3306;Uid=root;Pwd=vans;");
 
                 connection.Open();
                 MySqlCommand command = new MySqlCommand();
