@@ -14,13 +14,14 @@ namespace Migration
         {
             checkDB();
             createTBL();
+            createDB();
         }
 
         public static void checkDB()
         {
             try
             {
-                MySqlConnection conn = new MySqlConnection("datasource=localhost; Database=db_pldt; username=root; password=");
+                MySqlConnection conn = new MySqlConnection("datasource=localhost; username=root; password=");
 
                 string strCheck = "SHOW DATABASES LIKE 'db_pldt'";
 
