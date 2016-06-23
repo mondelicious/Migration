@@ -13,8 +13,8 @@ namespace Migration
         static void Main(string[] args)
         {
             checkDB();
-            createTBL();
             createDB();
+            createTBL();
         }
 
         public static void checkDB()
