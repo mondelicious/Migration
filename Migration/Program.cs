@@ -24,7 +24,7 @@ namespace Migration
         {
             try
             {
-                MySqlConnection conn = new MySqlConnection("Server=localhost; Uid=root; Pwd=;");
+                MySqlConnection conn = new MySqlConnection("Server=localhost; Uid=root; Pwd=vans;");
 
                 string strCheck = "SHOW DATABASES LIKE 'db_pldt'";
 
@@ -49,7 +49,6 @@ namespace Migration
             catch
             {
                 Console.WriteLine("Check if the sql engine is running, if not then start it!");
-
             }
         }
 
@@ -58,7 +57,7 @@ namespace Migration
         {
             try
             {
-                MySqlConnection connection = new MySqlConnection("Server=localhost; port=3306;Uid=root;Pwd=;");
+                MySqlConnection connection = new MySqlConnection("Server=localhost; port=3306;Uid=root;Pwd=vans;");
 
                 connection.Open();
                 MySqlCommand command = new MySqlCommand();
@@ -80,7 +79,7 @@ namespace Migration
         //create table command
         public static void createTBL()
         {
-            MySqlConnection conn = new MySqlConnection("Server=localhost; Database=db_pldt; Uid=root; Pwd=;");
+            MySqlConnection conn = new MySqlConnection("Server=localhost; Database=db_pldt; Uid=root; Pwd=vans;");
 
             string strCheck = "SHOW TABLES LIKE 'tbl_account'";
 
@@ -102,7 +101,7 @@ namespace Migration
 
                 try
                 {
-                    MySqlConnection connection = new MySqlConnection("Server=localhost; port=3306; Uid=root; Pwd=;");
+                    MySqlConnection connection = new MySqlConnection("Server=localhost; port=3306; Uid=root; Pwd=vans;");
 
                     connection.Open();
                     MySqlCommand command = new MySqlCommand();
@@ -130,7 +129,7 @@ namespace Migration
         {
             try
             {
-                MySqlConnection connection = new MySqlConnection("Server=localhost; Database=db_pldt; port=3306;Uid=root;Pwd=;");
+                MySqlConnection connection = new MySqlConnection("Server=localhost; Database=db_pldt; port=3306;Uid=root;Pwd=vans;");
 
                 connection.Open();
                 MySqlCommand command = new MySqlCommand();
@@ -154,7 +153,7 @@ namespace Migration
         {
             try
             {
-                MySqlConnection connection = new MySqlConnection("Server=localhost;Database=db_pldt; port=3306; Uid=root; Pwd=;");
+                MySqlConnection connection = new MySqlConnection("Server=localhost;Database=db_pldt; port=3306; Uid=root; Pwd=vans;");
 
                 connection.Open();
                 MySqlCommand command = new MySqlCommand();
