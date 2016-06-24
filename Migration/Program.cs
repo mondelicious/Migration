@@ -22,7 +22,7 @@ namespace Migration
         {
             try
             {
-                MySqlConnection conn = new MySqlConnection("datasource=localhost; username=root; password=");
+                MySqlConnection conn = new MySqlConnection("Server=localhost; Uid=root; Pwd=;");
 
                 string strCheck = "SHOW DATABASES LIKE 'db_pldt'";
 
@@ -54,7 +54,7 @@ namespace Migration
 
         public static void createTBL()
         {
-            MySqlConnection conn = new MySqlConnection("datasource=localhost; Database=db_pldt; username=root; password=");
+            MySqlConnection conn = new MySqlConnection("Server=localhost; Database=db_pldt; Uid=root; Pwd=pisokins22;");
 
             string strCheck = "SHOW TABLES LIKE 'tbl_account'";
 
@@ -76,7 +76,7 @@ namespace Migration
 
                 try
                 {
-                    MySqlConnection connection = new MySqlConnection("datasource=localhost; port=3306; username=root; password=");
+                    MySqlConnection connection = new MySqlConnection("Server=localhost; port=3306; Uid=root; Pwd=pisokins22;");
 
                     connection.Open();
                     MySqlCommand command = new MySqlCommand();
@@ -102,7 +102,7 @@ namespace Migration
         {
             try
             {
-                MySqlConnection connection = new MySqlConnection("datasource=localhost; port=3306;Uid=root;Pwd=;");
+                MySqlConnection connection = new MySqlConnection("Server=localhost; port=3306;Uid=root;Pwd=pisokins22;");
 
                 connection.Open();
                 MySqlCommand command = new MySqlCommand();
@@ -125,24 +125,24 @@ namespace Migration
         {
             try
             {
-                MySqlConnection connection = new MySqlConnection("datasource=localhost; Database=db_pldt; port=3306;Uid=root;Pwd=;");
+                MySqlConnection connection = new MySqlConnection("Server=localhost; Database=db_pldt; port=3306;Uid=root;Pwd=pisokins22;");
 
                 connection.Open();
                 MySqlCommand command = new MySqlCommand();
                 command.Connection = connection;
-                command.CommandText = "INSERT INTO tbl_account(Username,Password,UserType)VALUES('admin','1234','Admin')";
+                command.CommandText = "INSERT INTO tbl_account(Employee_ID,Username,Password,UserType)VALUES('1','judes','1234','Admin')";
                 command.ExecuteNonQuery();
 
                 Console.WriteLine("Successfully added to the table!");
                 Console.ReadLine();
                 connection.Close();
-            }
+        }
             catch (Exception)
             {
                 Console.WriteLine("Cannot add data to the table.", "System");
                 Console.ReadLine();
             }
-        }
+}
 
     }
 }
