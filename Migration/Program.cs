@@ -157,7 +157,7 @@ namespace Migration
                 connection.Open();
                 MySqlCommand command = new MySqlCommand();
                 command.Connection = connection;
-                command.CommandText = "INSERT INTO tbl_account(Employee_ID,Username,Password,UserType)VALUES('1','judes','1234','Admin')";
+                command.CommandText = "INSERT INTO tbl_account(Employee_ID,Username,Password,UserType)VALUES('1','vans','1234','Admin')";
                 command.ExecuteNonQuery();
 
                 Console.WriteLine("Successfully added to the table!");
