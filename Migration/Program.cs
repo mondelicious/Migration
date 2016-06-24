@@ -12,11 +12,12 @@ namespace Migration
     {
         static void Main(string[] args)
         {
-            checkDB();
-            createDB();
-            createTBL();
-            createEmployee();
-            insertDT();
+            createtblAccount();
+            //checkDB();
+            //createDB();
+            //createTBL();
+            //createEmployee();
+            //insertDT();
         }
 
         //check database command
@@ -121,6 +122,29 @@ namespace Migration
 
             }
             conn.Close();
+        }
+
+        public static void createtblAccount()
+        {
+            try
+            {
+                MySqlConnection connection = new MySqlConnection("Server=localhost; port=3306; Uid=root; Pwd=vans;");
+
+                connection.Open();
+                MySqlCommand command = new MySqlCommand();
+                command.Connection = connection;
+                command.CommandText = "USE db_pldt CREATE TABLE tbl_account(Employee_ID INT NOT NULL, First_name VARCHAR(250), Last_name VARCHAR(250), Email VARCHAR(250), Username VARCHAR(250), Password VARCHAR(250), UserType VARCHAR(250), Contact_number VARCHAR(250), Position VARCHAR(250) PRIMARY KEY(Employee_ID))";
+                command.ExecuteNonQuery();
+
+                Console.WriteLine("Successfully created the Table");
+                Console.ReadLine();
+                connection.Close();
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Cannot Create table it's either existing already or database is not connected");
+                Console.ReadLine();
+            }
         }
 
        
