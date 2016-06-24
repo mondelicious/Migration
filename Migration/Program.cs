@@ -15,13 +15,14 @@ namespace Migration
             checkDB();
             createDB();
             createTBL();
+            insertDT();
         }
 
         public static void checkDB()
         {
             try
             {
-                MySqlConnection conn = new MySqlConnection("datasource=localhost; username=root; password=vans");
+                MySqlConnection conn = new MySqlConnection("datasource=localhost; username=root; password=");
 
                 string strCheck = "SHOW DATABASES LIKE 'db_pldt'";
 
@@ -49,10 +50,11 @@ namespace Migration
 
             }
         }
+        
 
         public static void createTBL()
         {
-            MySqlConnection conn = new MySqlConnection("datasource=localhost; Database=db_pldt; username=root; password=vans");
+            MySqlConnection conn = new MySqlConnection("datasource=localhost; Database=db_pldt; username=root; password=");
 
             string strCheck = "SHOW TABLES LIKE 'tbl_account'";
 
@@ -74,7 +76,7 @@ namespace Migration
 
                 try
                 {
-                    MySqlConnection connection = new MySqlConnection("datasource=localhost; port=3306; username=root; password=vans");
+                    MySqlConnection connection = new MySqlConnection("datasource=localhost; port=3306; username=root; password=");
 
                     connection.Open();
                     MySqlCommand command = new MySqlCommand();
@@ -100,7 +102,7 @@ namespace Migration
         {
             try
             {
-                MySqlConnection connection = new MySqlConnection("datasource=localhost; port=3306;Uid=root;Pwd=vans;");
+                MySqlConnection connection = new MySqlConnection("datasource=localhost; port=3306;Uid=root;Pwd=;");
 
                 connection.Open();
                 MySqlCommand command = new MySqlCommand();
@@ -115,6 +117,29 @@ namespace Migration
             catch (Exception)
             {
                 Console.WriteLine("Cannot Create Database or the database already exist?", "System");
+                Console.ReadLine();
+            }
+        }
+
+        public static void insertDT()
+        {
+            try
+            {
+                MySqlConnection connection = new MySqlConnection("datasource=localhost; Database=db_pldt; port=3306;Uid=root;Pwd=;");
+
+                connection.Open();
+                MySqlCommand command = new MySqlCommand();
+                command.Connection = connection;
+                command.CommandText = "INSERT INTO tbl_account(Username,Password,UserType)VALUES('admin','1234','Admin')";
+                command.ExecuteNonQuery();
+
+                Console.WriteLine("Successfully added to the table!");
+                Console.ReadLine();
+                connection.Close();
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Cannot add data to the table.", "System");
                 Console.ReadLine();
             }
         }
