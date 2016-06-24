@@ -54,7 +54,7 @@ namespace Migration
 
         public static void createTBL()
         {
-            MySqlConnection conn = new MySqlConnection("Server=localhost; Database=db_pldt; Uid=root; Pwd=pisokins22;");
+            MySqlConnection conn = new MySqlConnection("Server=localhost; Database=db_pldt; Uid=root; Pwd=;");
 
             string strCheck = "SHOW TABLES LIKE 'tbl_account'";
 
@@ -76,7 +76,7 @@ namespace Migration
 
                 try
                 {
-                    MySqlConnection connection = new MySqlConnection("Server=localhost; port=3306; Uid=root; Pwd=pisokins22;");
+                    MySqlConnection connection = new MySqlConnection("Server=localhost; port=3306; Uid=root; Pwd=;");
 
                     connection.Open();
                     MySqlCommand command = new MySqlCommand();
@@ -102,7 +102,7 @@ namespace Migration
         {
             try
             {
-                MySqlConnection connection = new MySqlConnection("Server=localhost; port=3306;Uid=root;Pwd=pisokins22;");
+                MySqlConnection connection = new MySqlConnection("Server=localhost; port=3306;Uid=root;Pwd=;");
 
                 connection.Open();
                 MySqlCommand command = new MySqlCommand();
@@ -125,7 +125,7 @@ namespace Migration
         {
             try
             {
-                MySqlConnection connection = new MySqlConnection("Server=localhost; Database=db_pldt; port=3306;Uid=root;Pwd=pisokins22;");
+                MySqlConnection connection = new MySqlConnection("Server=localhost; Database=db_pldt; port=3306;Uid=root;Pwd=;");
 
                 connection.Open();
                 MySqlCommand command = new MySqlCommand();
@@ -136,13 +136,36 @@ namespace Migration
                 Console.WriteLine("Successfully added to the table!");
                 Console.ReadLine();
                 connection.Close();
-        }
+            }
             catch (Exception)
             {
                 Console.WriteLine("Cannot add data to the table.", "System");
                 Console.ReadLine();
             }
-}
+        }
+
+        //public static void createEmployee()
+        //{
+        //    try
+        //    {
+        //        MySqlConnection connection = new MySqlConnection("Server=localhost; port=3306; Uid=root; Pwd=pisokins22;");
+
+        //        connection.Open();
+        //        MySqlCommand command = new MySqlCommand();
+        //        command.Connection = connection;
+        //        command.CommandText = "USE db_pldt CREATE TABLE tbl_employee()";
+        //        command.ExecuteNonQuery();
+
+        //        Console.WriteLine("Successfully created the Table");
+        //        Console.ReadLine();
+        //        connection.Close();
+        //    }
+        //    catch (Exception)
+        //    {
+        //        Console.WriteLine("Cannot Create table it's either existing already or database is not connected");
+        //        Console.ReadLine();
+        //    }
+        //}
 
     }
 }
